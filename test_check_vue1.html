@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<script src="lib/my97datepicker/WdatePicker.js"></script>
+		<script src="lib/vue.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+
+		<div id="dataDiv">
+			<input id="start_time" v-model="data.startTime" type="text" class="form-control" style="width:300px" onchange="abc()">
+			<img onclick="WdatePicker({el:$dp.$('start_time')})" src="img/dateicon.png" width="16" height="22" align="absmiddle">
+			<div style="background: #ffff00; width: 200px;">{{data.startTime}}</div>
+
+			<div>黄色方框中 为Vue 内存中的属性值 {{*}}</div>
+
+			<input style="margin-top: 30px;" v-model="data.text" />
+			<div style="background: #ffff00; width: 200px;">{{data.text}}</div>
+		</div>
+
+		<script>
+			var liveData = {
+				data: {
+					"startTime": "0000-00-00 00:00:00"
+				}
+			};
+
+			var vm = new Vue({
+				el: "#dataDiv",
+				data: liveData,
+				created: function() {}
+			});
+
+			function abc() {
+
+			}
+		</script>
+
+	</body>
+
+</html>
